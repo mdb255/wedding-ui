@@ -1,0 +1,66 @@
+body {
+  padding-top: 30px;
+  padding-left: 50px;
+
+  line-height: 1;
+}
+
+.cut-border {
+  width: 530px;
+  border-style: dashed;
+  padding: 40px;
+}
+
+.border {
+  /*width: 500px;*/
+  border: 25px solid #7A4DB5;
+  /*margin: 15px;*/
+}
+
+.content {
+  padding: 20px 35px 25px 35px;
+  background-color: white;
+}
+
+.title {
+  font-size: 8em;
+  color: #442178;
+  display: block;
+  font-family: 'Tangerine', cursive;
+  margin-left: 10px;
+}
+
+.details {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-left: 25px;
+}
+
+.label {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+.names {
+  font-size: 1.4em;
+}
+
+.to-from {
+  margin-bottom: 30px;
+  color: #9063D4;
+}
+
+.items-title {
+  font-size: 1.2em;
+  /*font-family: 'Tangerine', cursive;*/
+}
+
+#items {
+  margin-left: 20px;
+}
+
+#items p {
+  margin: 0.5em 0;
+  font-size: 1em;
+}

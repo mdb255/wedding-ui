@@ -1,0 +1,343 @@
+html {
+  overflow-y:scroll;
+}
+
+body {
+   background: #555555;
+}
+
+.view-body {
+  background-image: url("../img/example_bg.jpg");
+  background-position: center 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.transparent-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+.home-view {
+  /*background: rgba(200, 200, 200, .8);*/
+}
+
+.page-box {
+  padding: 40px 0 0 0;
+  background-color: rgba(245, 245, 245, 0.85);
+}
+
+.header-title {
+  font-family: "Alex Brush",Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: none !important;
+}
+
+.header-subtitle {
+  color: #ffffff;
+}
+
+.page-subtitle {
+  padding: 0 30px;
+}
+
+.title1 {
+  font-size: 1.9em;
+}
+
+.subtitle1 {
+  font-size: 2em;
+  display: inline;
+}
+
+.inline-icon {
+  padding-bottom: 6px;
+}
+
+.navbar-header {
+  padding-bottom: 5px;
+}
+
+.circle a:hover {
+  text-decoration: none;
+}
+
+.circle-btn {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #9770d8;
+}
+
+.circle-btn-link:hover {
+  color: #ddd0f3;
+}
+
+.navbar-brand {
+  color: #DDD0F3 !important;
+  padding-top: 0 !important;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 0;
+}
+
+.form-err {
+  font-size: 0.9em;
+  color: red;
+  font-style: italic;
+}
+
+.content {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.section-header {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #5A2CA0;
+}
+
+.detail {
+  text-align: left;
+}
+
+.detail ul {
+  margin-left: -10px;
+}
+
+.detail-content a {
+  font-size: 20px;
+  color: blue;
+  font-size: medium;
+}
+
+.detail-content a:hover {
+  color: #0491DC;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+#ri-grid {
+  width: 85%;
+}
+
+.rsvp-form {
+  background-color: white;
+  padding: 15px;
+}
+
+.rsvp-form-option {
+  font-size: 1.1em;
+}
+
+.rsvp-label {
+  font-size: 0.9em;
+}
+
+.rsvp-detail {
+  font-size: 0.8em;
+}
+
+.submit-container {
+  text-align: right;
+}
+
+.reg-items-list {
+  margin: 0 auto;
+  max-width: 1004px;
+}
+
+.reg-item {
+  background: white;
+  display: block;
+  float: left;
+  margin: 1em;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+}
+
+.reg-item-img {
+  float: left;
+}
+
+.reg-item-details {
+  float: left;
+}
+
+.reg-item-btn {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.custom-price {
+  width: 50px !important;
+}
+
+.custom-input {
+  padding: 5px 8px !important;
+}
+
+.cart-item {
+  float: left;
+  background: white;
+  display: block;
+  margin: 1em;
+  /*position: relative;*/
+  text-align: left;
+  vertical-align: top;
+  padding: 25px;
+}
+
+.cart-item-img {
+  float: left;
+}
+
+.cart-item-title {
+  float: left;
+}
+
+.cart-item-price {
+  float: left;
+  padding: 10px 10px;
+}
+
+.cart-item-price-val {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.preview-item {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+.gift-summary {
+  margin-bottom: 30px;
+}
+
+.gift-total {
+  font-size: 1.1em;
+  margin-left: 15px;
+}
+
+.gift-buttons {
+  margin-top: 20px;
+}
+
+
+.reg-item-value {
+  /*font-weight: bold;*/
+}
+
+.registry-listing-subtitle {
+  font-size: 2em;
+}
+
+.registry-listing {
+  padding-top: 40px;
+}
+
+.pad-bt-5 {
+  padding-bottom: 40px;
+}
+
+.cart-menu-item {
+  margin: 15px;
+  display: block;
+}
+
+.cart-menu-header {
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  font-size: 130%;
+}
+
+.cart-total {
+  font-size: 1.3em;
+}
+
+.registry-img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reg-img-box {
+  display: block;
+  float: left;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+}
+
+.reg-img-title-box {
+  float: left;
+
+  position: relative;
+}
+
+.reg-img-title {
+  padding-top: 3.5em;
+  padding-left: 4em;
+}
+
+.reg-img-btn-box {
+  float: left;
+  position: relative;
+}
+
+.reg-img-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.centered-detail {
+  text-align: center;
+}
+
+.reg-trans {
+  background: url("../img/trans.png");
+}
+
+.reg-accom {
+  background: url("../img/accom.png");
+}
+
+.reg-dining {
+  background: url("../img/dining.png");
+}
+
+.reg-explore {
+  background: url("../img/explore.png");
+}
+
+.reg-relax {
+  background: url("../img/relax.png");
+}
+
+/** Angular fixes **/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

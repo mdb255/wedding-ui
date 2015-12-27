@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weddingApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/html5-boilerplate/css/main.css">
+
+    <meta name="author" content="">
+
+    <title>Bride and Groom - The Wedding</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="/resources/styles/themes/bootswatch-flatly/bootstrap.css" rel="stylesheet">
+    <!-- Lib CSS -->
+    <link href="/resources/styles/themes/freelancer/freelancer.css" rel="stylesheet">
+    <link href="/lib/plugins/ri-grid/ri-grid.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/styles/wedding.css" rel="stylesheet">
+    <link href="/resources/styles/positioning.css" rel="stylesheet">
+    <link href="/resources/styles/animations.css" media="(min-width: 768px)" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="/resources/styles/responsive-xs.css" media="(max-width: 350px)" rel="stylesheet">
+    <link href="/resources/styles/responsive-sm.css" media="(min-width: 351px) and (max-width: 767px)" rel="stylesheet">
+    <link href="/resources/styles/responsive-md.css" media="(min-width: 768px) and (max-width: 1199px)" rel="stylesheet">
+    <link href="/resources/styles/responsive-lg.css" media="(min-width: 1200px)" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="page-top" class="index view-body">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="header-title">
+                    <div class="title1">
+                        <a class="navbar-brand" href="#page-top">Bride & Groom</a>
+                    </div>
+                    <div ng-cloak class="header-subtitle subtitle1">
+                        <img class="inline-icon" src="/resources/img/shell_md.png" /> 1. 23. 15 <img class="inline-icon"src="/resources/img/starfish_md.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul ng-cloak class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li ng-repeat="tab in tabs" class="page-scroll">
+                        <div class="circle" ng-class="{ 'active-nav': activeTab === tab.path.substring(1) }">
+                            <a ng-href="{{tab.path}}">
+                                {{tab.label}}
+                                <div ng-show="tab.label === ''">
+                                    <i class="fa fa-shopping-cart cart-icon"></i>
+                                    <span ng-class="{ 'invisible': !isCartCounterVisible }" class="badge cart-count">{{ cartItemCount }}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="reg-nav-bar">
+        </div>
+    </nav>
+
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div>
+        <div class="content pan-left-animate" ng-view></div>
+    </div>
+
+    <script src="/resources/bundles/js/libs-bundle.min.js"></script>
+    <script src="/resources/bundles/js/app-bundle.min.js"></script>
+
+    <script type="text/ng-template" id="simple-ok-modal.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{ title }}</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>{{ message }}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="ok()">OK</button>
+        </div>
+    </script>
+
+</body>
+
+</html>

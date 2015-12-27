@@ -1,0 +1,4 @@
+{
+  "apiUrl": "http://localhost:8080/wedding-ws/v1",
+  "webRootPath": "/src/wedding-website/app/"
+}

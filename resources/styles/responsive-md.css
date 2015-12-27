@@ -1,0 +1,242 @@
+.circle {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  /*background-color: #a27fdc;*/
+  background-color: #9770d8;
+  margin-right: 4px;
+  font-size: 0.7em;
+
+  transition: width linear .25s, height linear .25s, line-height linear .25s, font-size linear .25s;
+}
+
+.active-nav {
+  width: 90px !important;
+  height: 90px !important;
+  line-height: 90px !important;
+  font-size: 0.85em !important;
+  transition: width linear .35s, height linear .35s, line-height linear .35s, font-size linear .35s;
+}
+
+.inline-icon {
+  width: 16px;
+  height: 25px;
+}
+
+.cart-icon {
+  font-size: 3.5em;
+  line-height: inherit !important;
+  position: relative;
+  left: 15px;
+}
+
+.cart-count {
+  position: relative;
+  right: 9px;
+  top: 3px;
+  background-color: #18bc9c !important;
+  color: #fff !important;
+  padding: 5px 9px !important;
+  /*#5a2ca0;*/
+}
+
+.img-purp-circle {
+  width: 300px;
+  height: 300px;
+  margin-top: 25px;
+}
+
+.header-subtitle {
+  margin-left: 70px;
+  font-size: 1.3em;
+  line-height: 2;
+  float: left;
+}
+
+.header-title {
+  width: 210px;
+}
+
+.detail {
+  padding: 40px;
+}
+
+.sms-vs5 {
+  margin-top: 40px;
+}
+
+
+/* Registry Menu */
+
+.reg-img-box {
+  height: 233px;
+  width: 650px;
+}
+
+.registry-img {
+  height: 233px;
+  width: 650px;
+}
+
+.reg-img-title-box {
+  height: 233px;
+  width: 425px;
+}
+
+.reg-img-btn-box {
+  height: 233px;
+  width: 225px;
+}
+
+.reg-img-title {
+  padding-top: 3.5em;
+  padding-left: 3em;
+}
+
+.reg-img-title h1 {
+  font-size: 2em;
+}
+
+.reg-img-title p {
+  font-size: 1.3em;
+}
+
+.reg-img-btn-box .btn-lg {
+  font-size: 1.3em;
+  padding: 16px 22px;
+  line-height: 1;
+}
+
+/* Registry Items */
+
+/*.circle-btn {*/
+  /*width: 45px;*/
+  /*height: 45px;*/
+  /*line-height: 39px;*/
+/*}*/
+
+/*.circle-btn-icon {*/
+  /*font-size: 1.2em;*/
+/*}*/
+
+/*.reg-item {*/
+  /*height: 160px;*/
+  /*width: 300px;*/
+/*}*/
+
+/*.reg-item-img {*/
+  /*height: 160px;*/
+  /*width: 160px;*/
+/*}*/
+
+/*.reg-item-details {*/
+  /*height: 160px;*/
+  /*width: 240px;*/
+/*}*/
+
+/*.reg-item-desc {*/
+  /*padding: 20px;*/
+/*}*/
+
+/*.reg-item-btn {*/
+  /*left: 200px;*/
+  /*line-height: 3rem;*/
+/*}*/
+
+/*.reg-item-title {*/
+  /*font-size: 1.1em;*/
+/*}*/
+
+/*.reg-item-subtitle p {*/
+  /*font-size: 0.95em;*/
+/*}*/
+
+.circle-btn {
+  width: 45px;
+  height: 45px;
+  line-height: 39px;
+}
+
+.circle-btn-icon {
+  font-size: 1.2em;
+}
+
+.reg-item {
+  height: 200px;
+  width: 450px;
+  margin-left: 110px;
+}
+
+.reg-item-img {
+  height: 200px;
+  width: 200px;
+}
+
+.reg-item-details {
+  height: 200px;
+  width: 250px;
+}
+
+.reg-item-desc {
+  padding: 20px;
+}
+
+.reg-item-btn {
+  left: 200px;
+  line-height: 3rem;
+}
+
+.reg-item-title {
+  font-size: 1.3em;
+}
+
+.reg-item-subtitle p {
+  font-size: 0.95em;
+}
+
+/* Cart */
+
+.cart-item {
+  height: 150px;
+  width: 550px;
+}
+
+.cart-item-img {
+  height: 100px;
+  width: 100px;
+}
+
+.cart-item-title {
+  width: 300px;
+  padding: 10px 40px;
+}
+
+.cart-item-title p {
+  font-size: 1.4em;
+}
+
+.cart-item-price-val {
+  font-size: 1.8em;
+}
+
+/* Global */
+
+.section-header {
+  font-size: 2.6em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+/*.reg-img-title {*/
+/*padding-top: 3.5em;*/
+/*padding-left: 4em;*/
+/*}*/
+

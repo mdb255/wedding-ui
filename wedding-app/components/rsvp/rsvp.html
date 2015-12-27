@@ -1,0 +1,115 @@
+<div class="container page-box">
+  <div class="row">
+    <div class="col-md-12">
+
+      <p class="section-header">RSVP</p>
+
+      <div class="container detail">
+
+        <div class="row vs3">
+
+          <div class="col-md-7 rsvp-form">
+            <div class="col-md-6" ng-repeat="rsvp in rsvps" ng-init="formName = 'rsvpForm' + $index">
+              <h4 ng-show="rsvp.guestType === 'self'">RSVP for myself</h4>
+              <div ng-show="rsvp.guestType === 'guest'" class="checkbox">
+                <label class="rsvp-form-option"><input type="checkbox" ng-model="rsvp.isActive">Also RSVP for another guest</label>
+              </div>
+
+              <form name="{{formName}}" novalidate>
+                <fieldset ng-disabled="!rsvp.isActive" class="vs3">
+                  <div class="form-group">
+                    <label>First name</label>
+                    <input ng-model="rsvp.firstName" name="firstName" type="text" class="form-control" required>
+                    <p ng-show="{{formName}}.firstName.$invalid && isFS && rsvp.isActive" class="form-err">First name is required</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Last name</label>
+                    <input ng-model="rsvp.lastName" name="lastName" type="text" class="form-control" required>
+                    <p ng-show="{{formName}}.lastName.$invalid && isFS && rsvp.isActive" class="form-err">Last name is required</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input ng-model="rsvp.email" name="email" type="email" class="form-control" required>
+                    <p ng-show="{{formName}}.email.$error.required && isFS && rsvp.isActive" class="form-err">Email is required</p>
+                    <p ng-show="{{formName}}.email.$error.email && isFS && rsvp.isActive" class="form-err">Not a valid email address</p>
+                  </div>
+
+                  <div class="form-group vs5">
+                    <label>Events Attending:</label>
+                    <div class="checkbox">
+                      <label><input ng-model="rsvp.attdReception" type="checkbox" value="">Ceremony and Reception</label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input ng-model="rsvp.attdBoat" type="checkbox" value="">Sailboat Cruise</label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input ng-model="rsvp.attdNone" type="checkbox" value="">Sorry, will not attend</label>
+                    </div>
+                    <p ng-show="rsvp.errAttdNotSelected && rsvp.isActive" class="form-err">At least one option must be selected</p>
+                    <p ng-show="rsvp.errAttdBadCombo && rsvp.isActive" class="form-err">Conflicting choices have been selected</p>
+                  </div>
+
+                  <div class="form-group vs5">
+                    <label>Dinner</label>
+                    <select ng-model="rsvp.dinner" name="dinner" class="form-control" ng-required="!rsvp.attdNone">
+                      <option value="">Not selected</option>
+                      <option ng-repeat="choice in dinnerChoices">{{ choice }}</option>
+                    </select>
+                    <p ng-show="{{formName}}.dinner.$invalid && isFS && rsvp.isActive" class="form-err">A dinner selection is required</p>
+                  </div>
+
+                  <div ng-show="rsvp.dinner.length > 0" class="hs2">
+                    <label class="rsvp-label">Your selection</label>
+                    <p class="rsvp-detail">{{ dinnerMenu[rsvp.dinner] }}</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Dessert</label>
+                    <select ng-model="rsvp.dessert" name="dessert" class="form-control" ng-required="!rsvp.attdNone">
+                      <option value="">Not selected</option>
+                      <option>Red Velvet cake</option>
+                      <option>Carrot cake</option>
+                      <option>Lemon cupcake</option>
+                      <option>Strawberry cupcake</option>
+                    </select>
+                    <p ng-show="{{formName}}.dessert.$invalid && isFS && rsvp.isActive" class="form-err">A dessert selection is required</p>
+                  </div>
+                </fieldset>
+
+                <div ng-init="storeForms(rsvpForm0, rsvpForm1);"></div>
+
+              </form>
+
+              <div class="submit-container">
+                <button ng-show="rsvp.guestType === 'guest'" ng-click="submit()" ng-disabled="isSubmitSuccess" type="button" class="btn btn-success vs2">Submit</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <img class="center-block img-purp-circle" src="/resources/img/placeholder.png" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/ng-template" id="rsvp-received.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Success!</h3>
+  </div>
+
+  <div class="modal-body">
+    <p>We've received your RSVP. Thanks for responding!</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" ng-click="ok()">OK</button>
+  </div>
+
+</script>

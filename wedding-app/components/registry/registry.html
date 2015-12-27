@@ -1,0 +1,86 @@
+<div class="container page-box">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div ng-class="{'hidden': category !== 'none'}">
+
+        <p class="section-header">Registry</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="page-subtitle">Please enjoy browsing this alternative registry where you can contribute to our dream honeymoon.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail registry-listing">
+
+          <div class="registry-img vs3 {{page.id}}" ng-repeat="page in pages">
+            <div class="reg-img-box">
+              <div class="reg-img-title-box">
+                <div class="reg-img-title">
+                  <h1>{{page.title}}</h1>
+                  <p>{{page.subtitle}}</p>
+                </div>
+              </div>
+              <div class="reg-img-btn-box">
+                <a ng-href="{{ '#/registry?category=' + page.category }}" class="btn btn-lg btn-success reg-img-btn" role="button">Browse</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div ng-class="{'hidden': category === 'none'}">
+        <p class="section-header">
+          <span class="circle-btn">
+            <a href="#/registry" class="btn circle-btn-link" role="button"><i class="fa fa-arrow-left circle-btn-icon"></i></a>
+          </span>
+          {{category}}
+        </p>
+        <div class="container detail registry-listing">
+          <div class="reg-items-list">
+              <div class="reg-item" ng-repeat="regItem in registryItems">
+                <img class="reg-item-img" ng-src="/resources/img/registry/{{ regItem.imageUrl }}" />
+                <div class="reg-item-details">
+                  <form name="regForm" novalidate>
+                    <div class="reg-item-desc">
+                      <div ng-show="!regItem.isPurchasable" class="reg-item-subtitle">
+                        <p><textarea ng-model="regItem.description" placeholder="Your Suggestion" name="description" class="form-control input-lg custom-input" rows="2" required></textarea></p>
+                        <p>
+                          <span>Amount: $</span>
+                          <input ng-model="regItem.selectedPrice" name="amount" class="custom-price" type="text" required>
+                        </p>
+                      </div>
+                      <div ng-show="regItem.isPurchasable">
+                        <p class="reg-item-title">{{ regItem.description }}</p>
+                        <div class="reg-item-subtitle">
+                          <p>Quantity available: <span class="reg-item-value">{{ regItem.qtyRemaining }}</span></p>
+                          <p ng-show="regItem.qtyRemaining > 0">
+                            <span>Amount:</span>
+
+                              <select ng-show="regItem.prices.length > 1" ng-model="regItem.selectedPrice" name="amount" required>
+                                <option value="">{{ regItem.priceRange }}</option>
+                                <option value="{{ price }}" ng-repeat="price in regItem.prices">${{ price }}</option>
+                              </select>
+                              <span ng-show="regItem.prices.length == 1" class="reg-item-value">${{ regItem.prices[0] }}</span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <a ng-show="(regItem.qtyRemaining > 0 || !regItem.isPurchasable) && !regItem.isInCart" class="reg-item-btn btn btn-sm btn-success" role="button" ng-click="addToCart(regItem, regForm);">Choose as Gift</a>
+                    <a ng-show="regItem.qtyRemaining <= 0 && regItem.isPurchasable && !regItem.isInCart" class="reg-item-btn btn btn-sm btn-success disabled" role="button">Sold Out!</a>
+                    <a ng-show="regItem.isInCart" class="reg-item-btn btn btn-sm btn-success disabled" role="button">In Cart</a>
+                  </form>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

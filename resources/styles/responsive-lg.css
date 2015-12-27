@@ -1,0 +1,154 @@
+.circle {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  text-align: center;
+  /*background-color: #a27fdc;*/
+  background-color: #9770d8;
+  margin-right: 9px;
+  font-size: 1em;
+
+  transition: width linear .25s, height linear .25s, line-height linear .25s, font-size linear .25s;
+}
+
+.active-nav {
+  width: 125px !important;
+  height: 125px !important;
+  line-height: 125px !important;
+  font-size: 1.2em !important;
+  transition: width linear .35s, height linear .35s, line-height linear .35s, font-size linear .35s;
+}
+
+.cart-icon {
+  font-size: 3.5em;
+  line-height: inherit !important;
+  position: relative;
+  left: 15px;
+}
+
+.cart-count {
+  position: relative;
+  right: 9px;
+  top: 3px;
+  background-color: #18bc9c !important;
+  color: #fff !important;
+  padding: 5px 9px !important;
+  /*#5a2ca0;*/
+}
+
+.header-subtitle {
+  margin-left: 140px;
+}
+
+.header-title {
+  width: 320px;
+}
+
+.detail {
+  padding: 70px;
+}
+
+
+/* Registry Menu */
+
+.reg-img-box {
+  height: 233px;
+  width: 747px;
+}
+
+.registry-img {
+  height: 233px;
+  width: 747px;
+}
+
+.reg-img-title-box {
+  height: 233px;
+  width: 500px;
+}
+
+.reg-img-btn-box {
+  height: 233px;
+  width: 247px;
+}
+
+/* Registry Items */
+
+.circle-btn {
+  width: 45px;
+  height: 45px;
+  line-height: 39px;
+}
+
+.circle-btn-icon {
+  font-size: 1.2em;
+}
+
+.reg-item {
+  height: 200px;
+  width: 450px;
+}
+
+.reg-item-img {
+  height: 200px;
+  width: 200px;
+}
+
+.reg-item-details {
+  height: 200px;
+  width: 250px;
+}
+
+.reg-item-desc {
+  padding: 20px;
+}
+
+.reg-item-btn {
+  left: 200px;
+  line-height: 3rem;
+}
+
+.reg-item-title {
+  font-size: 1.3em;
+}
+
+.reg-item-subtitle p {
+  font-size: 0.95em;
+}
+
+/* Cart */
+
+.cart-item {
+  height: 150px;
+  width: 550px;
+}
+
+.cart-item-img {
+  height: 100px;
+  width: 100px;
+}
+
+.cart-item-title {
+  width: 300px;
+  padding: 10px 40px;
+}
+
+.cart-item-title p {
+  font-size: 1.4em;
+}
+
+.cart-item-price-val {
+  font-size: 1.8em;
+}
+
+/* Global */
+
+.section-header {
+  font-size: 3em;
+}
+
+/*.reg-img-title {*/
+  /*padding-top: 3.5em;*/
+  /*padding-left: 4em;*/
+/*}*/
+

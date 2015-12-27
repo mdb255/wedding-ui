@@ -1,0 +1,113 @@
+<div class="container page-box">
+  <div class="row">
+    <div class="col-md-12">
+
+      <p class="section-header">Shopping Cart</p>
+
+      <div class="container detail">
+        <div class="row pad-bt-5">
+
+          <div ng-show="!vm.cart.isEmpty">
+            <div class="col-md-7 col-lg-6 col-lg-offset-1 col-xs-12">
+              <div class="cart-item" ng-repeat="cartItem in vm.cart.items">
+                <div class="cart-item-img-box">
+                  <img class="cart-item-img" ng-src="/resources/img/registry/{{ cartItem.imageUrl }}" />
+                </div>
+                <div class="cart-item-title">
+                  <p>{{ cartItem.description }}</p>
+                </div>
+                <div class="cart-item-price">
+                  <p class="cart-item-price-val">${{ cartItem.price }}</p>
+                  <a class="btn btn-sm btn-danger" role="button" ng-click="vm.removeCartItem(cartItem.itemId);">Remove</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-1 col-xs-12">
+              <div class="cart-menu-item cart-menu-header">
+                <p class="cart-total">Cart Total</p>
+                <p class="cart-item-price-val">${{ vm.cart.totalPrice }}</p>
+              </div>
+                <a ng-href="#/registry" class="cart-menu-item btn btn-success" role="button">Continue Browsing</a>
+                <a class="cart-menu-item btn btn-success" role="button" ng-click="vm.checkout();">Checkout</a>
+            </div>
+          </div>
+
+          <div class="centered-detail" ng-show="vm.cart.isEmpty">
+            <div class="col-md-12">
+              <p>Your registry cart is currently empty.</p>
+              <a ng-href="#/registry" class="btn btn-success vs4" role="button">Browse the Registry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/ng-template" id="checkout.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Registry Checkout</h3>
+  </div>
+
+  <div ng-show="!isReqSuccess">
+    <form name="checkoutForm" novalidate>
+      <div class="modal-body">
+
+        <div class="gift-summary">
+          <span class="form-title">Gift summary</span>
+          <ul class="preview-list">
+            <li class="preview-item" ng-repeat="item in checkoutItems">
+              {{ item.description }}
+            </li>
+          </ul>
+          <p class="gift-total">Total amount: ${{ checkoutTotal }}</p>
+        </div>
+
+        <div class="form-group">
+          <label>This gift is presented by</label>
+          <input ng-model="fromNames" name="names" type="text" placeholder="Your name(s)" class="form-control" required>
+          <p ng-show="checkoutForm.names.$invalid && isFS" class="form-err">This field is required</p>
+        </div>
+
+        <div class="form-group">
+          <label>Email address (to receive printable gift certificate)</label>
+          <input ng-model="fromEmail" name="email" type="email" placeholder="Your email" class="form-control" required>
+          <p ng-show="checkoutForm.email.$error.required && isFS" class="form-err">This field is required</p>
+          <p ng-show="checkoutForm.email.$error.email && isFS" class="form-err">Not a valid email address</p>
+        </div>
+
+        <div class="form-group">
+          <label>How would you like to deliver your gift?</label>
+          <select ng-model="deliveryMethod" name="deliveryMethod" class="form-control" required>
+            <option value="">Not selected</option>
+            <option value="in_person">I will give cash or check in person</option>
+            <option value="mail">I will mail a check</option>
+          </select>
+          <p ng-show="checkoutForm.deliveryMethod.$invalid && isFS" class="form-err">This field is required</p>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" ng-disabled="isSubmitSuccess" ng-click="submit(checkoutForm.$valid)">Submit</button>
+        <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div ng-show="isReqSuccess">
+    <div class="modal-body">
+      <p class="form-title">Gift Confirmation</p>
+      <p>Thank you for your generous contribution!</p>
+      <p>We have emailed you a link to a certificate that you can print to go along with your gift.</p>
+      <div class="gift-buttons">
+        <button class="btn btn-warning" ng-click="print()">Print Certificate</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" ng-click="ok()">Done</button>
+    </div>
+
+  </div>
+</script>

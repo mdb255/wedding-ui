@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="giftApp">
+<head lang="en">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="../../bower_components/html5-boilerplate/css/main.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="gift.css">
+
+  <script src="/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <base href="/src/wedding-website/app/" >
+
+  <title>Gift Card</title>
+</head>
+<body>
+
+  <div class="cut-border">
+    <div class="border">
+      <div class="content" ng-controller="GiftCtrl">
+        <span class="title">gift certificate</span>
+        <div class="details">
+          <div class="to-from">
+            <p><span class="label">To</span> <span class="names">Bride and Groom</span></p>
+            <p><span class="label">From</span> <span id="from" class="names">{{ from }}</span></p>
+          </div>
+          <p class="items-title">Please enjoy the following items on us!</p>
+          <div id="items">
+            <p ng-repeat="item in items">{{ item }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/wedding-app/components/gift-card/gift.js"></script>
+
+</body>
+</html>

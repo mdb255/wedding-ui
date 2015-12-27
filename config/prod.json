@@ -1,0 +1,4 @@
+{
+  "apiUrl": "http://example-prod-domain:8080/wedding-ws/v1",
+  "webRootPath": "/"
+}
